@@ -1,0 +1,19 @@
+# GitHub Actions test for 'Check command' workflow;
+# runs a trivial command to verify success detection.
+#
+# Latest revision: 2026-03-26
+#
+# Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
+# please read UNLICENSE file for details.
+
+name: Test 'Check command' reusable workflow
+
+on:
+  push:
+  workflow_dispatch:
+
+jobs:
+  test-success:
+    uses: mystikolaos/actions/.github/workflows/check-command.yml@main
+    with:
+      command: "ls"
