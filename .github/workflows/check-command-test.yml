@@ -1,7 +1,7 @@
 # GitHub Actions test for 'Check command' workflow;
 # runs a trivial command to verify success detection.
 #
-# Latest revision: 2026-03-26
+# Latest revision: 2026-03-27
 #
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
