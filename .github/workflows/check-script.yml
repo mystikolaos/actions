@@ -1,0 +1,28 @@
+# Reusable workflow for checking shell commands;
+# fails on non-zero script exit code.
+#
+# Latest revision: 2026-03-27
+#
+# Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
+# please read UNLICENSE file for details.
+
+name: Check script
+
+on:
+  workflow_call:
+    inputs:
+      script:
+        description: "Script to check"
+        required: true
+        type: string
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Make script executable
+        run: chmod +x ${{ inputs.script }}
+      - name: Run script
+        run: ${{ inputs.script }}
