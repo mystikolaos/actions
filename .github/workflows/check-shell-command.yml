@@ -1,0 +1,42 @@
+# Reusable workflow for checking shell commands and scripts;
+# fails on non-zero exit code or if expected output file does not exist.
+#
+# Latest revision: 2026-03-31
+#
+# Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
+# please read UNLICENSE file for details.
+
+name: Check shell command
+
+on:
+  workflow_call:
+    inputs:
+      command:
+        description: "Command to run"
+        required: true
+        type: string
+      make-executable:
+        description: "If true, make command executable before running (for scripts)"
+        required: false
+        type: boolean
+        default: false
+      expected-file:
+        description: "If set, check that this file exists after running command"
+        required: false
+        type: string
+        default: ""
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+      - name: Make script executable
+        if: ${{ inputs.is-script }}
+        run: chmod +x ${{ inputs.command }}
+      - name: Run command
+        run: ${{ inputs.command }}
+      - name: Check output file exists
+        if: ${{ inputs.expected-file != '' }}
+        run: test -f ${{ inputs.expected-file }}
