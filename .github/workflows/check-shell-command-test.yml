@@ -1,0 +1,37 @@
+# GitHub Actions test for 'Check shell command' workflow;
+# runs trivial commands and scripts to verify success detection.
+#
+# Latest revision: 2026-04-01
+#
+# Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
+# please read UNLICENSE file for details.
+
+name: Test 'Check shell command' workflow
+
+on:
+  push:
+  workflow_dispatch:
+jobs:
+  test-command:
+    uses: mystikolaos/actions/.github/workflows/check-shell-command.yml@main
+    with:
+      command: "ls"
+
+  test-command-output:
+    uses: mystikolaos/actions/.github/workflows/check-shell-command.yml@main
+    with:
+      command: "touch output.txt"
+      expected-file: "output.txt"
+
+  test-script:
+    uses: mystikolaos/actions/.github/workflows/check-shell-command.yml@main
+    with:
+      command: "test/hello"
+      make-executable: true
+
+  test-script-output:
+    uses: mystikolaos/actions/.github/workflows/check-shell-command.yml@main
+    with:
+      command: "test/hello"
+      make-executable: true
+      expected-file: "hello.txt"
