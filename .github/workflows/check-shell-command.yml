@@ -6,7 +6,7 @@
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
 
-name: Check shell script
+name: Check shell command
 
 on:
   workflow_call:
