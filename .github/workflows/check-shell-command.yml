@@ -1,7 +1,7 @@
 # Reusable workflow for checking shell commands and scripts;
 # fails on non-zero exit code or if expected output file does not exist.
 #
-# Latest revision: 2026-03-31
+# Latest revision: 2026-04-01
 #
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
@@ -33,7 +33,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v6
       - name: Make script executable
-        if: ${{ inputs.is-script }}
+        if: ${{ inputs.make-executable }}
         run: chmod +x ${{ inputs.command }}
       - name: Run command
         run: ${{ inputs.command }}
