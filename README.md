@@ -4,7 +4,7 @@ Reusable GitHub Actions workflows with corresponding tests.
 
 ## check-shell-command
 
-Runs a shell command or script and verifies it exits successfully. Optionally checks that an expected output file was created. For usage examples, see: [check-shell-command-test][00].
+Runs a shell command or script and verifies it exits successfully. Optionally checks that an expected output file was created. For usage examples, see: [check-shell-command-test][00] workflow.
 
 ## Author
 
