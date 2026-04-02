@@ -1,7 +1,7 @@
 # GitHub Actions test for 'Check shell command' workflow;
 # runs trivial commands and scripts to verify success detection.
 #
-# Latest revision: 2026-04-01
+# Latest revision: 2026-04-02
 #
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
@@ -35,3 +35,9 @@ jobs:
       command: "test/hello"
       make-executable: true
       expected-file: "hello.txt"
+
+  test-packages:
+    uses: mystikolaos/actions/.github/workflows/check-shell-command.yml@main
+    with:
+      packages: "cowsay"
+      command: "cowsay Hello"
