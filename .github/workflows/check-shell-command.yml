@@ -1,7 +1,7 @@
 # Reusable workflow for checking shell commands and scripts;
 # fails on non-zero exit code or if expected output file does not exist.
 #
-# Latest revision: 2026-04-01
+# Latest revision: 2026-04-02
 #
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
@@ -11,6 +11,11 @@ name: Check shell command
 on:
   workflow_call:
     inputs:
+      packages:
+        description: "Space-separated list of apt packages to install before running command"
+        required: false
+        type: string
+        default: ""
       command:
         description: "Command to run"
         required: true
@@ -32,6 +37,11 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+      - name: Install packages
+        if: ${{ inputs.packages != '' }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y ${{ inputs.packages }}
       - name: Make script executable
         if: ${{ inputs.make-executable }}
         run: chmod +x ${{ inputs.command }}
