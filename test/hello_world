@@ -2,9 +2,9 @@
 
 # Test fixture for 'Check shell command' workflow tests.
 #
-# Latest revision: 2026-04-01
+# Latest revision: 2026-04-02
 #
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
 
-echo "Hello, world!" | tee hello.txt
+echo "Hello, world!" | tee hello_world.txt

@@ -26,18 +26,18 @@ jobs:
   test-script:
     uses: mystikolaos/actions/.github/workflows/check-shell-command.yml@main
     with:
-      command: "test/hello"
+      command: "test/hello_world"
       make-executable: true
 
   test-script-output:
     uses: mystikolaos/actions/.github/workflows/check-shell-command.yml@main
     with:
-      command: "test/hello"
+      command: "test/hello_world"
       make-executable: true
-      expected-file: "hello.txt"
+      expected-file: "hello_world.txt"
 
   test-packages:
     uses: mystikolaos/actions/.github/workflows/check-shell-command.yml@main
     with:
       packages: "cowsay"
-      command: "cowsay Hello"
+      command: "cowsay 'Hello, world!'"
