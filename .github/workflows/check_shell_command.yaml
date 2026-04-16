@@ -1,7 +1,7 @@
 # Reusable workflow for checking shell commands and scripts;
 # fails on non-zero exit code or if expected output file does not exist.
 #
-# Latest revision: 2026-04-02
+# Latest revision: 2026-04-16
 #
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
