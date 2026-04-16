@@ -6,7 +6,7 @@
 # Created and unlicensed by Mikołaj Bartnicki <mikolaj@bartnicki.org>;
 # please read UNLICENSE file for details.
 
-name: Test 'Check shell command' workflow
+name: Check shell command test
 
 on:
   push:
