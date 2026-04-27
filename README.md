@@ -1,6 +1,7 @@
 # actions
 
-Reusable GitHub Actions workflow to check shell commands and scripts, with corresponding tests. For usage details, see the comments inside the [workflow file][00], as well as the calls in the [test workflow][01].
+Reusable GitHub Actions workflow to check shell commands and scripts, with corresponding tests.
+For usage details, see the comments inside the [workflow file][00], as well as the calls in the [test workflow][01].
 
 ## Author
 
